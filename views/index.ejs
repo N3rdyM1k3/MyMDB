@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+  <h1> Welcome to MyMDB </h1>
+  <form action="/movies" method="POST">
+    <input type="text" placeholder="title" name="title">
+    <button type="submit">Submit</button>
+  </form>
+  <h2> Movies </h2>
+  <ul class="movies">
+    <% for(var i = 0; i < movies.length; i++) {%>
+        <li class="movie">
+          <!-- Output title from the iterated movie object -->
+          <span><%= movies[i].title %></span>
+        </li>
+      <% } %>
+  </ul>
+</body>
+</html>

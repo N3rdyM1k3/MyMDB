@@ -9,9 +9,17 @@ MongoClient.connect(mongoConnectionString, {
   }).then(client => {
         const db = client.db('mymdb')
         const moviesCollection = db.collection('movies')
+        app.set('view engine', 'ejs')
         app.use(bodyParser.urlencoded({extended: true}))
+        // app.get('/', (req, res) => {
+        //   res.sendFile(__dirname + "/index.html")
+        // })
         app.get('/', (req, res) => {
-          res.sendFile(__dirname + "/index.html")
+            const cursor = db.collection('movies').find().toArray()
+            .then(results => {
+                res.render('index.ejs', {movies: results})
+            })
+            .catch(error => console.error(error))
         })
         app.post('/movies', (req, res) => {
             moviesCollection.insertOne(req.body)
@@ -19,6 +27,7 @@ MongoClient.connect(mongoConnectionString, {
                 res.redirect('/')
             })
             .catch(error => console.log(error))
+
         })
         app.listen(3000, function(){
             console.log('listening on 3000')
