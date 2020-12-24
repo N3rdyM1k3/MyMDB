@@ -11,6 +11,8 @@ MongoClient.connect(mongoConnectionString, {
         const moviesCollection = db.collection('movies')
         app.set('view engine', 'ejs')
         app.use(bodyParser.urlencoded({extended: true}))
+        app.use(express.static('public'))
+        app.use(bodyParser.json())
         // app.get('/', (req, res) => {
         //   res.sendFile(__dirname + "/index.html")
         // })
@@ -28,6 +30,20 @@ MongoClient.connect(mongoConnectionString, {
             })
             .catch(error => console.log(error))
 
+        })
+        app.put('/movies', (req, res) => {
+            moviesCollection.findOneAndUpdate(
+                { title: 'Parasite' }, 
+                {
+                    $set: {title: req.body.title}
+                }, 
+                {
+                    upsert: true
+                })
+                .then(_ => {
+                    res.json('Success')
+                  })
+                .catch(error => console.error(error))
         })
         app.listen(3000, function(){
             console.log('listening on 3000')
