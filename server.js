@@ -45,6 +45,17 @@ MongoClient.connect(mongoConnectionString, {
                   })
                 .catch(error => console.error(error))
         })
+        app.delete('/movies', (req, res) => {
+            moviesCollection.deleteOne(
+                {title: req.body.title},
+            ).then(result => {
+                if(result.deletedCount == 0){
+                    return res.json('Nothing to delete')
+                }
+                res.json('Deleted Parasite')
+            })
+            .catch(error => console.error(error))
+        })
         app.listen(3000, function(){
             console.log('listening on 3000')
         })
