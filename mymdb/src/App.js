@@ -1,13 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import {Grid, Card} from '@mui/material';
+//import './App.css';
 import movies from './data/movies.json';
+import MovieList from './MovieList';
+import { useTheme } from '@mui/material/styles'
 
 
 function App() {
+  const theme = useTheme();
   return (
     <div className="App">
-      <Grid>{movies.map((m) => {return (<Card>{m.Title}</Card>)})}</Grid>
+      <MovieList theme={theme} movies={movies} />
     </div>
   );
 }
