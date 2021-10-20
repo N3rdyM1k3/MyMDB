@@ -1,16 +1,22 @@
 //import './App.css';
 import movies from './data/movies.json';
 import MovieList from './MovieList';
-import { useTheme } from '@mui/material/styles'
 import {themeOptions } from './ThemeOptions';
-import { ThemeProvider } from '@mui/material/styles'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import { Paper } from '@mui/material';
 
+
+const theme = createTheme({...themeOptions});
 
 function App() {
+  
+
   return (
     <div className="App">
-      <ThemeProvider theme={themeOptions} >
-        <MovieList movies={movies} />
+      <ThemeProvider theme={theme} >
+        <Paper>
+          <MovieList movies={movies} />
+        </Paper>
       </ThemeProvider>
     </div>
   );

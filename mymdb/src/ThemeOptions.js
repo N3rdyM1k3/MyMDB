@@ -8,7 +8,7 @@ export const themeOptions = {
         main: '#08f9e7',
       },
       background: {
-        paper: '#373637',
+        paper: '#5e5c5e',
         default: '#373637',
       },
       text: {
@@ -20,12 +20,14 @@ export const themeOptions = {
         main: '#e810d5',
       },
     },
-    shape: {
-      borderRadius: 10,
-    },
     typography: {
       subtitle1: {
         fontFamily: 'PT Sans',
       },
     },
+    components: {
+      Card: {
+        backgroundColor: '#e810d5',
+      }
+    }
   };
