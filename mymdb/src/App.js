@@ -3,6 +3,7 @@ import movies from './data/movies.json';
 import MovieList from './MovieList';
 import {themeOptions } from './ThemeOptions';
 import { ThemeProvider, createTheme } from '@mui/material/styles'
+import CssBaseline from "@mui/material/CssBaseline";
 import { Paper } from '@mui/material';
 
 
@@ -12,13 +13,11 @@ function App() {
   
 
   return (
-    <div className="App">
+
       <ThemeProvider theme={theme} >
-        <Paper>
+          <CssBaseline />
           <MovieList movies={movies} />
-        </Paper>
       </ThemeProvider>
-    </div>
   );
 }
 
