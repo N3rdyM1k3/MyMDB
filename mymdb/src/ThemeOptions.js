@@ -1,33 +1,20 @@
 export const themeOptions = {
-    palette: {
-      type: 'light',
-      primary: {
-        main: '#e810d5',
-      },
-      secondary: {
-        main: '#08f9e7',
-      },
-      background: {
-        paper: '#5e5c5e',
-        default: '#373637',
-      },
-      text: {
-        primary: '#7ff145', // NEON PINK #e810d5
-        secondary: '#e810d5', // NEON GREEN #7ff145
-      },
-      divider: '#7ff145',
-      error: {
-        main: '#e810d5',
-      },
+  palette: {
+    background: {
+      paper: '#F5F5F6',
+      default: '#f40057',
     },
-    typography: {
-      subtitle1: {
-        fontFamily: 'PT Sans',
-      },
+    primary: {
+      light: '#ff5983',
+      main: '#3f50b5',
+      dark: '#ba002f',
+      contrastText: '#000000',
     },
-    components: {
-      Card: {
-        backgroundColor: '#e810d5',
-      }
-    }
-  };
+    secondary: {
+      light: '#76ff03',
+      main: '#b0ff57',
+      dark: '#32cb00',
+      contrastText: '#000000',
+    },
+  },
+};
