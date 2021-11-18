@@ -12,10 +12,10 @@ export const themeOptions = {
         default: '#373637',
       },
       text: {
-        primary: '#e810d5',
-        secondary: '#7ff145',
+        primary: '#7ff145', // NEON PINK #e810d5
+        secondary: '#e810d5', // NEON GREEN #7ff145
       },
-      divider: '#e8d233',
+      divider: '#7ff145',
       error: {
         main: '#e810d5',
       },
