@@ -28,12 +28,12 @@ function Movie(movie) {
 
 function MovieDetail(movie) {
   return (
-    <>
-    <Typography component="div" variant="h5">{movie.Title}</Typography>
-    <Typography variant="p" component="div">{movie.Country}  {movie.Year}</Typography>
-    <Typography variant="p" component="div">{movie.Runtime} {movie.Rated}</Typography>
-    <Typography variant="p" component="div">{movie.Genre}</Typography>
-    </>
+    <Box >
+      <Typography component="div" variant="h5">{movie.Title}</Typography>
+      <Typography variant="p" component="div">{movie.Country}  {movie.Year}</Typography>
+      <Typography variant="p" component="div">{movie.Runtime} {movie.Rated}</Typography>
+      <Typography variant="p" component="div">{movie.Genre}</Typography>
+    </Box>
   );
 }
 
