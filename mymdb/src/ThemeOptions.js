@@ -6,7 +6,7 @@ export const themeOptions = {
     },
     primary: {
       light: '#ff5983',
-      main: '#3f50b5',
+      main: '#f40057',
       dark: '#ba002f',
       contrastText: '#000000',
     },
@@ -15,6 +15,14 @@ export const themeOptions = {
       main: '#b0ff57',
       dark: '#32cb00',
       contrastText: '#000000',
+    },
+  },
+  typography: {
+    h5 : {
+      fontSize: "1rem",
+    },
+    p : {
+      fontSize: "0.7rem",
     },
   },
 };
