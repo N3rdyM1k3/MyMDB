@@ -19,11 +19,13 @@ export const themeOptions = {
   },
   typography: {
     fontFamily: ['"Architects Daughter"', 'Open Sans'].join(','),
+    fontWeight: 600 ,
     h5 : {
-      fontSize: "1rem",
+      fontSize: "1.1rem",
+      fontWeight: 600 ,
     },
     p : {
-      fontSize: "0.7rem",
+      fontSize: "0.8rem",
     },
   },
 };

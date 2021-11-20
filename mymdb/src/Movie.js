@@ -11,16 +11,19 @@ function Movie(movie) {
       <Card sx={{ display: "flex", border: 4, borderRadius: 2, borderColor: 'secondary.light' }}>
         
           <CardMedia component="img" image={movie.Poster} sx={{ width: 100, height: 150 }} />
-          <Stack>
-            <CardContent sx={{ flex: '1 0 auto', p: 1, boxShadow:0 }}>
-                  <MovieDetail {...movie} />
-            </CardContent>
-            <CardActions>
-                <Box sx={{ display:'flex', justifyContent: 'flex-end' }}>
-                  <Button variant="outlined" color="primary" size="small">MORE INFO</Button>
-                </Box>
-            </CardActions>
-          </Stack> 
+            <Stack>
+              <CardContent sx={{ p: 1, boxShadow:0 }}>
+                    <MovieDetail {...movie} />
+              </CardContent>
+              <CardActions>
+                  <Box sx={{ display:'flex', justifyContent: 'flex-end' }}>
+                    <Button variant="outlined" color="primary" size="small">MORE</Button>
+                  </Box>
+                  <Box sx={{ display:'flex', justifyContent: 'flex-end' }}>
+                    <Button variant="outlined" color="primary" size="small">ACTION</Button>
+                  </Box>
+              </CardActions>
+            </Stack>
       </Card>
     </Grid>
   );
