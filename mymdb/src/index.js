@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MovieList from './MovieList';
+import MovieDetail from './MovieDetail';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+  <Routes>
+    <Route path="/" element={<App />}>
+      <Route path="/movies" element={<MovieList />} />
+      <Route path="/movies/:imdbID" element={<MovieDetail />} />
+    </Route>
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

@@ -1,9 +1,11 @@
 import { Grid, Box } from '@mui/material';
 import Movie from './Movie';
+import {getMovies} from './data/movies.js';
 
-function MovieList(props) {
+function MovieList() {
+  const movies = getMovies();
 
-  const { movies } = { ...props };
+
   return (
     <>
     <Box sx={{ height: 100 }} /> {/* TODO: This is a place holder for where the menu will live */}
