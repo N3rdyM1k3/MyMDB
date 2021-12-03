@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MovieList from './MovieList';
-import MovieDetail from './MovieDetail';
+import MovieList from './Components/MovieList'; // TODO: Change this to ./Routes/... as soon as you split MovieList
+import MovieDetail from './Routes/MovieDetail';
 
 ReactDOM.render(
   <BrowserRouter>

@@ -1,5 +1,5 @@
 //import './App.css';
-import MovieList from './MovieList';
+import MovieList from './Components/MovieList';
 import {themeOptions } from './ThemeOptions';
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from "@mui/material/CssBaseline";

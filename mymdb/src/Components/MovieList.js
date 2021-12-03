@@ -1,6 +1,6 @@
 import { Grid, Box } from '@mui/material';
 import Movie from './Movie';
-import {getMovies} from './data/movies.js';
+import {getMovies} from '../data/movies.js';
 
 function MovieList() {
   const movies = getMovies();
