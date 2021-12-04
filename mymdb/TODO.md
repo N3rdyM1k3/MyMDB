@@ -1,10 +1,15 @@
 Up Next: 
 - Add Search
-    - Add Search Fuction -- hard
-    - Add Search Page -- hard
-    - Display Results -- medium 
+    - Split API search from other script
+    - View more is broken on search results 
+        - Should I try and display more info? Maybe this is fine. 
+    - Add search bar
+    - Tie in search routing query param 
+    - Figure out "add" button -- instead of "Action"?
     - Movie C,D  -- easy
     - Movie Backend?
+    - Consider what the main page is and what it isn't (search position?)
+    - Add paging of search results? 
 
 Other TODOs:
 - Create movie detail page
@@ -13,6 +18,8 @@ Other TODOs:
     - By title
     - By runtime 
 - Determine homepage? -- https://reactrouter.com/docs/en/v6/api#navigate
+- Loading results function
+- Default Movie Image 
 
 
 URLS: 
