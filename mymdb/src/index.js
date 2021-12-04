@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import MoviesList from './Components/MovieList'; // TODO: Change this to ./Routes/... as soon as you split MovieList
 import MovieDetail from './Routes/MovieDetail';
 import Movies from './Routes/Movies';
-
+import Search from './Routes/Search';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -15,6 +15,7 @@ ReactDOM.render(
     <Route path="/" element={<App />}>
       <Route path="/movies" element={<Movies />} />
       <Route path="/movies/:imdbID" element={<MovieDetail />} />
+      <Route path="/search" element={<Search />} />
     </Route>
     </Routes>
   </BrowserRouter>,
