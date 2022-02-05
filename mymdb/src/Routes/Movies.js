@@ -1,4 +1,4 @@
-import {getMovies} from '../data/movies.js';
+import {getMovies} from '../scripts/movies.js';
 import MovieList from '../Components/MovieList';
 
 function Movies(){

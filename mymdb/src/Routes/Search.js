@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { searchAPI } from '../data/movies';
+import { searchAPI } from '../scripts/search';
 import MovieList from '../Components/MovieList'
 
 function Search(){

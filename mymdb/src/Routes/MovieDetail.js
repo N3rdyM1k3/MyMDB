@@ -1,6 +1,6 @@
 import {Paper} from '@mui/material'
 import { useParams, useNavigate } from 'react-router-dom';
-import {getMovie} from '../data/movies.js';
+import {getMovie} from '../scripts/movies.js';
 
 function MovieDetail(){
     let params = useParams();
