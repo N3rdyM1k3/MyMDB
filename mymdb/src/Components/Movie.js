@@ -17,7 +17,7 @@ function Movie(movie) {
               </CardContent>
               <CardActions>
                   <Box sx={{ display:'flex', justifyContent: 'flex-end' }}>
-                    <Button variant="outlined" color="primary" size="small" href={"movies/"+movie.imdbID}>MORE</Button>
+                    <Button variant="outlined" color="primary" size="small" href={"../movies/"+movie.imdbID}>MORE</Button>
                   </Box>
                   <Box sx={{ display:'flex', justifyContent: 'flex-end' }}>
                     <Button variant="outlined" color="primary" size="small">ACTION</Button>
