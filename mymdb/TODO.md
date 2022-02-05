@@ -1,8 +1,8 @@
 Up Next: 
 - Add Search
-    - Split API search from other script
     - View more is broken on search results 
-        - useContext should provide a function call to make for add/view more and text for the button 
+        - location.state is what you need to pass it along through react router 
+            https://reactrouter.com/docs/en/v6/getting-started/concepts
     - Add search bar
     - Tie in search routing query param 
     - Figure out "add" button -- instead of "Action"?
