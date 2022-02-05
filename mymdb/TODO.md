@@ -2,7 +2,7 @@ Up Next:
 - Add Search
     - Split API search from other script
     - View more is broken on search results 
-        - Should I try and display more info? Maybe this is fine. 
+        - useContext should provide a function call to make for add/view more and text for the button 
     - Add search bar
     - Tie in search routing query param 
     - Figure out "add" button -- instead of "Action"?
@@ -12,6 +12,7 @@ Up Next:
     - Add paging of search results? 
 
 Other TODOs:
+- Put this as the readme so it shows up
 - Create movie detail page
 - Add filtering
     - By genre
