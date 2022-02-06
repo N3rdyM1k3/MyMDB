@@ -3,6 +3,7 @@ Up Next:
     - View more is broken on search results 
         - location.state is what you need to pass it along through react router 
             https://reactrouter.com/docs/en/v6/getting-started/concepts
+           read this next: https://dev.to/halented/passing-state-to-components-rendered-by-react-router-and-other-fun-things-3pjf
         - handle case when movie is null 
     - Add search bar
     - Tie in search routing query param 
