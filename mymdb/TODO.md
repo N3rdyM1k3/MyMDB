@@ -1,9 +1,6 @@
 Up Next: 
 - Add Search
-    - View more is broken on search results 
-        - location.state is what you need to pass it along through react router 
-            https://reactrouter.com/docs/en/v6/getting-started/concepts
-        - handle case when movie is null 
+    - handle case when movie is not in our list of movies (update getMovies? idk yet really)
     - Add search bar
     - Tie in search routing query param 
     - Figure out "add" button -- instead of "Action"?
