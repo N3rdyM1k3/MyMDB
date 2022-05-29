@@ -3,7 +3,7 @@ import MovieList from './Components/MovieList';
 import {themeOptions } from './ThemeOptions';
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from "@mui/material/CssBaseline";
-import { Paper } from '@mui/material';
+import { Box } from '@mui/material';
 import { Outlet } from 'react-router';
 
 
@@ -16,6 +16,7 @@ function App() {
 
       <ThemeProvider theme={theme} >
           <CssBaseline />
+          <Box sx={{ height: 100 }} /> {/* TODO: This is a place holder for where the menu will live */}
           <Outlet />
       </ThemeProvider>
   );
