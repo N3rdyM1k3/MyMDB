@@ -11,7 +11,7 @@ function MovieList(props) {
     <Grid container>
       <Grid item xs={1}/>
       <Grid item xs={10}>
-        <Grid container spacing={7}>
+        <Grid container spacing={5}>
           {
             movies.map((m) => { return (<Movie {...m} />) })
           }
