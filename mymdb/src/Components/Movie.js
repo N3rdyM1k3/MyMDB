@@ -1,6 +1,7 @@
 import { Card, CardActions, Button, Grid, CardMedia, Typography, Box, Stack, Paper } from '@mui/material';
 import CardContent from "@mui/material/Card"
 import { useTheme } from '@mui/material/styles'
+import { Link } from 'react-router-dom';
 
 
 function Movie(movie) {
@@ -17,7 +18,9 @@ function Movie(movie) {
               </CardContent>
               <CardActions>
                   <Box sx={{ display:'flex', justifyContent: 'flex-end' }}>
-                    <Button variant="outlined" color="primary" size="small" href={"movies/"+movie.imdbID}>MORE</Button>
+                    <Button variant="outlined" color="primary" size="small" href={"../movies/"+movie.imdbID}>
+                      <Link to={"../movies/"+movie.imdbID} state={{movie: movie}}>MORE</Link>
+                    </Button>
                   </Box>
                   <Box sx={{ display:'flex', justifyContent: 'flex-end' }}>
                     <Button variant="outlined" color="primary" size="small">ACTION</Button>

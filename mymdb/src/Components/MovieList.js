@@ -7,11 +7,11 @@ function MovieList(props) {
 
   return (
     <>
-    <Box sx={{ height: 100 }} /> {/* TODO: This is a place holder for where the menu will live */}
+    <Box sx={{ height: 50 }} />
     <Grid container>
       <Grid item xs={1}/>
       <Grid item xs={10}>
-        <Grid container spacing={7}>
+        <Grid container spacing={5}>
           {
             movies.map((m) => { return (<Movie {...m} />) })
           }

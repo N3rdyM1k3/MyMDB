@@ -1,4 +1,4 @@
-import movies from './movies.json';
+import movies from '../data/movies.json';
 
 
 export function getMovie(imdbID) {
@@ -8,3 +8,4 @@ export function getMovie(imdbID) {
   export function getMovies() {
     return movies;
   }
+
