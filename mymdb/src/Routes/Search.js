@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { searchAPI } from '../scripts/search';
 import MovieList from '../Components/MovieList'
 import { TextField } from '@mui/material';
@@ -8,10 +8,6 @@ function Search(){
     const [results, setResults] = useState([]);
     const [searchTitle, setSearchTitle] = useState("");
     const theme = useTheme();
-
-    useEffect(() => {
-        searchAPI("Now and Then").then(setResults);
-    }, [])
 
     const handleSubmit = evt => {
         evt.preventDefault();
