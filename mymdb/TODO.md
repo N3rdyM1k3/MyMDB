@@ -19,3 +19,4 @@ Other TODOs:
 - Determine homepage? -- https://reactrouter.com/docs/en/v6/api#navigate
 - Loading results function
 - Default Movie Image 
+- Long titles overflow making some movie cards larger (Harold Lloyd Comedy Collection" Harold's Hollywood - Then and Now)
