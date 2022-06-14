@@ -19,6 +19,7 @@ func main() {
 	}
 	r := mux.NewRouter()
 	r.HandleFunc("/search/{title}", handlers.HandleSearch)
+	r.HandleFunc("/movies", handlers.HandleSave).Methods("POST")
 	// r.HandleFunc("/search/{title}", func(w http.ResponseWriter, r *http.Request) {
 
 	// })
