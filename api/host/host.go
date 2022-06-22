@@ -1,4 +1,4 @@
-package main
+package host
 
 import (
 	//"io/ioutil"
@@ -11,7 +11,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
+func StartHosting() {
 	err := godotenv.Load()
 
 	if err != nil {
