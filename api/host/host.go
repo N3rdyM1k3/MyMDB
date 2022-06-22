@@ -1,7 +1,6 @@
-package main
+package host
 
 import (
-	//"io/ioutil"
 	"api/handlers"
 	"log"
 	"net/http"
@@ -11,7 +10,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
+func StartHosting() {
 	err := godotenv.Load()
 
 	if err != nil {
@@ -20,8 +19,6 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/search/{title}", handlers.HandleSearch)
 	r.HandleFunc("/movies", handlers.HandleSave).Methods("POST")
-	// r.HandleFunc("/search/{title}", func(w http.ResponseWriter, r *http.Request) {
 
-	// })
 	http.ListenAndServe(":80", r)
 }
