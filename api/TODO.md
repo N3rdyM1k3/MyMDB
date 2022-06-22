@@ -1,1 +1,3 @@
-https://gowebexamples.com/
+- Add GetMovies 
+- Zip search results with results from db 
+- Add tests? 
