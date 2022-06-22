@@ -1,7 +1,6 @@
 package host
 
 import (
-	//"io/ioutil"
 	"api/handlers"
 	"log"
 	"net/http"
@@ -20,8 +19,6 @@ func StartHosting() {
 	r := mux.NewRouter()
 	r.HandleFunc("/search/{title}", handlers.HandleSearch)
 	r.HandleFunc("/movies", handlers.HandleSave).Methods("POST")
-	// r.HandleFunc("/search/{title}", func(w http.ResponseWriter, r *http.Request) {
 
-	// })
 	http.ListenAndServe(":80", r)
 }
