@@ -1,3 +1,3 @@
-- Add GetMovies 
+- Organize a bit more: create additional repos, maybe create helper to write data? 
 - Zip search results with results from db 
 - Add tests? 

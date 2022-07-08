@@ -19,6 +19,7 @@ func StartHosting() {
 	r := mux.NewRouter()
 	r.HandleFunc("/search/{title}", handlers.HandleSearch)
 	r.HandleFunc("/movies", handlers.HandleSave).Methods("POST")
+	r.HandleFunc("/movies", handlers.HandleGetAll).Methods("GET")
 
 	http.ListenAndServe(":80", r)
 }
