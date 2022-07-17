@@ -16,7 +16,8 @@ func GetMovies() []interface{} {
 	defer client.Disconnect(ctx)
 	collection := client.Database("mymdb").Collection("movies")
 	var movies []interface{}
-	cursor, err := collection.Find(context.TODO(), bson.D{})
+	cursor, err := collection.Find(ctx, bson.D{})
+	defer cursor.Close(ctx)
 	if err != nil {
 		log.Fatal(err)
 	} else {
@@ -32,6 +33,17 @@ func GetMovies() []interface{} {
 	}
 	return movies
 
+}
+
+func SaveMovies(movies []interface{}) {
+	client, ctx := buildClient()
+	defer client.Disconnect(ctx)
+	collection := client.Database("mymdb").Collection("movies")
+	res, insertErr := collection.InsertMany(ctx, movies)
+	if insertErr != nil {
+		log.Print(insertErr)
+	}
+	log.Print(len(res.InsertedIDs))
 }
 
 func buildClient() (*mongo.Client, context.Context) {
