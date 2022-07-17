@@ -1,5 +1,10 @@
+- Individual Get: Check Mongo First? Check both and zip? 
+- Save: Add isOwned
+- Save: should merge??? 
+- Getting individual results from omdb returns much more detail
+- Make repo methods async
+
 - Organize a bit more: create additional repos, maybe create helper to write data? 
-    - Move other mongo commands 
 - Zip search results with results from db 
 - Add tests? 
 - Go deployed to GCP hello world 
