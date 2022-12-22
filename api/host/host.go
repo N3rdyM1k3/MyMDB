@@ -18,7 +18,7 @@ func StartHosting() {
 		log.Fatalf("Error loading .env file")
 	}
 	r := mux.NewRouter()
-	r.HandleFunc("/search/{title}", handlers.HandleSearch)
+	r.HandleFunc("/search/{title}", handlers.HandleSeach_Two)
 	r.HandleFunc("/movies", handlers.HandleSave).Methods("POST")
 	r.HandleFunc("/movies", handlers.HandleGetAll).Methods("GET")
 

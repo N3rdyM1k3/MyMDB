@@ -11,7 +11,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func GetMovies() []interface{} {
+func GetOwnedMovies() []interface{} {
 	client, ctx := buildClient()
 	defer client.Disconnect(ctx)
 	collection := client.Database("mymdb").Collection("movies")
@@ -35,7 +35,7 @@ func GetMovies() []interface{} {
 
 }
 
-func SaveMovies(movies []interface{}) {
+func SaveOwnedMovies(movies []interface{}) {
 	client, ctx := buildClient()
 	defer client.Disconnect(ctx)
 	collection := client.Database("mymdb").Collection("movies")

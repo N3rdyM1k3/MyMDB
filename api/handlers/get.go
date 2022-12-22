@@ -21,7 +21,7 @@ func HandleGetAll(w http.ResponseWriter, r *http.Request) {
 }
 
 func getAllMovies(c chan Payload) {
-	movies := repositories.GetMovies()
+	movies := repositories.GetOwnedMovies()
 	p := Payload{movies}
 	c <- p
 }
