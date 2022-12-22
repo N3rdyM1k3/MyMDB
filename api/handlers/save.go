@@ -1,9 +1,10 @@
 package handlers
 
 import (
-	"api/repositories"
 	"encoding/json"
 	"net/http"
+
+	"github.com/N3rdyM1k3/MyMDB/api/repositories"
 )
 
 func HandleSave(w http.ResponseWriter, r *http.Request) {

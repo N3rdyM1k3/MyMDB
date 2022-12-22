@@ -1,9 +1,10 @@
 package host
 
 import (
-	"api/handlers"
 	"log"
 	"net/http"
+
+	"github.com/N3rdyM1k3/MyMDB/api/handlers"
 
 	"github.com/gorilla/mux"
 

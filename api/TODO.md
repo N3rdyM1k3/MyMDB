@@ -8,7 +8,6 @@
 - Zip search results with results from db 
 - Add tests? 
 - Go deployed to GCP hello world 
-- Rename package to include github
 
 
 - Polish ideas

@@ -1,7 +1,7 @@
 package main
 
 import (
-	myhost "api/host"
+	myhost "github.com/N3rdyM1k3/MyMDB/api/host"
 )
 
 func main() {

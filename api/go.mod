@@ -1,4 +1,4 @@
-module api
+module github.com/N3rdyM1k3/MyMDB/api
 
 go 1.18
 
