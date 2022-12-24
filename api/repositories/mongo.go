@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -16,7 +17,8 @@ func SearchOwnedMovies(title string, c chan MovieCollection) {
 	defer client.Disconnect(ctx)
 	collection := client.Database("mymdb").Collection("movies")
 	var movies []interface{}
-	cursor, err := collection.Find(ctx, bson.D{})
+	tFilter := primitive.Regex{Pattern: title, Options: "i"}
+	cursor, err := collection.Find(ctx, bson.D{{"Title", bson.D{{"$regex", tFilter}}}})
 	defer cursor.Close(ctx)
 	if err != nil {
 		log.Fatal(err)
