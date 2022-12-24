@@ -11,6 +11,31 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+func SearchOwnedMovies(title string, c chan MovieCollection) {
+	client, ctx := buildClient()
+	defer client.Disconnect(ctx)
+	collection := client.Database("mymdb").Collection("movies")
+	var movies []interface{}
+	cursor, err := collection.Find(ctx, bson.D{})
+	defer cursor.Close(ctx)
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		for cursor.Next(ctx) {
+			var m bson.M
+			e := cursor.Decode(&m)
+			if e != nil {
+				log.Fatal(e)
+			} else {
+				movies = append(movies, m)
+			}
+		}
+	}
+	var m MovieCollection
+	m.Movies = movies
+	c <- m
+}
+
 func GetOwnedMovies() []interface{} {
 	client, ctx := buildClient()
 	defer client.Disconnect(ctx)

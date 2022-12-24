@@ -1,7 +1,8 @@
 - Active: Zip search results and make repos async
-    - Current issue is that I can't seem to get the results into the json array. See HandleSeach_Two and GetOmdbMovies
-    - https://www.alexedwards.net/blog/how-to-properly-parse-a-json-request-body
-    - Current thought is maybe you are serializing it into a dictionary? Try key value of "Search"? Research further into code base for example of dealing with json payloads. Save? 
+    - We got things working, but we aren't done. Next steps:
+        - Search owned movies (by title?)
+        - Verify merge behavior
+        - Maybe provide a single API? Idk... the merge function feels like buisness logic to me, so maybe keep it out of the repo
 
 - Split repo directory into two packages to hopefully create repositories/mongo/ and repositories/omdb/ 
 - Individual Get: Check Mongo First? Check both and zip? 
