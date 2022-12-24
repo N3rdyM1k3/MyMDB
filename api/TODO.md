@@ -1,5 +1,6 @@
 - Active: Zip search results and make repos async
-    - We got things working, but we aren't done. Next steps:
+    - Merge results
+    - Sort by "Owned" (add owned flag to movies)
         - Search owned movies (by title?)
         - Verify merge behavior
         - Maybe provide a single API? Idk... the merge function feels like buisness logic to me, so maybe keep it out of the repo
