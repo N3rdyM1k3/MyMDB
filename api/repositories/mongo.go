@@ -7,11 +7,38 @@ import (
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func GetMovies() []interface{} {
+func SearchOwnedMovies(title string, c chan MovieCollection) {
+	client, ctx := buildClient()
+	defer client.Disconnect(ctx)
+	collection := client.Database("mymdb").Collection("movies")
+	var movies []interface{}
+	tFilter := primitive.Regex{Pattern: title, Options: "i"}
+	cursor, err := collection.Find(ctx, bson.D{{"Title", bson.D{{"$regex", tFilter}}}})
+	defer cursor.Close(ctx)
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		for cursor.Next(ctx) {
+			var m bson.M
+			e := cursor.Decode(&m)
+			if e != nil {
+				log.Fatal(e)
+			} else {
+				movies = append(movies, m)
+			}
+		}
+	}
+	var m MovieCollection
+	m.Movies = movies
+	c <- m
+}
+
+func GetOwnedMovies() []interface{} {
 	client, ctx := buildClient()
 	defer client.Disconnect(ctx)
 	collection := client.Database("mymdb").Collection("movies")
@@ -35,7 +62,7 @@ func GetMovies() []interface{} {
 
 }
 
-func SaveMovies(movies []interface{}) {
+func SaveOwnedMovies(movies []interface{}) {
 	client, ctx := buildClient()
 	defer client.Disconnect(ctx)
 	collection := client.Database("mymdb").Collection("movies")

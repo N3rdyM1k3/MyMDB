@@ -1,3 +1,11 @@
+- Active: Zip search results and make repos async
+    - Merge results
+    - Sort by "Owned" (add owned flag to movies)
+        - Search owned movies (by title?)
+        - Verify merge behavior
+        - Maybe provide a single API? Idk... the merge function feels like buisness logic to me, so maybe keep it out of the repo
+
+- Split repo directory into two packages to hopefully create repositories/mongo/ and repositories/omdb/ 
 - Individual Get: Check Mongo First? Check both and zip? 
 - Save: Add isOwned
 - Save: should merge??? 
