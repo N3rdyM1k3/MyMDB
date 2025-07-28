@@ -2,12 +2,9 @@ package host
 
 import (
 	"log"
-	"net/http"
 
 	"github.com/N3rdyM1k3/MyMDB/api/handlers"
-
-	"github.com/gorilla/mux"
-
+	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
 
@@ -17,10 +14,13 @@ func StartHosting() {
 	if err != nil {
 		log.Fatalf("Error loading .env file")
 	}
-	r := mux.NewRouter()
-	r.HandleFunc("/search/{title}", handlers.HandleSeach)
-	r.HandleFunc("/movies", handlers.HandleSave).Methods("POST")
-	r.HandleFunc("/movies", handlers.HandleGetAll).Methods("GET")
+	router := gin.Default()
 
-	http.ListenAndServe(":80", r)
+	router.GET("/movies", handlers.HandleGetMovies)
+	router.POST("/movies", handlers.HandleSaveMovies)
+	router.PATCH("/movies/:id", handlers.HandleUpdateMovie)
+	router.DELETE("/movies/:id", handlers.HandleDeleteMovie)
+	router.GET("/search/:title", handlers.HandleSearch)
+
+	router.Run("localhost:8080")
 }
