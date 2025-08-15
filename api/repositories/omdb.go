@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func GetOmdbMovies(title string, c chan MovieCollection) {
+func SearchOmdb(title string, c chan MovieCollection) {
 	omdb_key := os.Getenv("OMDB_API_KEY")
 	res, _ := http.Get("https://www.omdbapi.com/?s=" + title + "&page=1&type=movie&apikey=" + omdb_key)
 	var search SearchResponse

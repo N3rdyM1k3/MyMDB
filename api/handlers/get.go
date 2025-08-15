@@ -8,6 +8,15 @@ import (
 )
 
 func HandleGetMovies(c *gin.Context) {
-	movies := repositories.GetOwnedMovies()
+	filter := c.Query("filter")
+	page := c.Query("page")
+	if page == "" {
+		page = "1"
+	}
+	pageSize := c.Query("pageSize")
+	if pageSize == "" {
+		pageSize = "25"
+	}
+	movies := repositories.GetOwnedMovies(filter, page, pageSize)
 	c.IndentedJSON(http.StatusOK, movies)
 }
