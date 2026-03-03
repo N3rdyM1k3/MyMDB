@@ -1,19 +1,18 @@
 package handlers
 
 import (
-	"encoding/json"
 	"net/http"
 
 	"github.com/N3rdyM1k3/MyMDB/api/repositories"
+	"github.com/gin-gonic/gin"
 )
 
-func HandleSave(w http.ResponseWriter, r *http.Request) {
+func HandleSaveMovies(c *gin.Context) {
 	var movies []interface{}
-
-	err := json.NewDecoder(r.Body).Decode(&movies)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
+	if err := c.BindJSON(&movies); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request"})
 		return
 	}
-	repositories.SaveOwnedMovies(movies)
+	repositories.SaveMovies(movies)
+	c.JSON(http.StatusCreated, gin.H{"status": "Movies saved successfully"})
 }
